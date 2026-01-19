@@ -337,11 +337,11 @@ Maintainer: root <root@runnervmmtnos>
 Installed-Size: 140
 Depends: libc6 (>= 2.38), libtirpc3t64 (>= 1.0.2)
 Filename: dists/nightly/main/binary-amd64/libnvpair3_2.4.99-325_amd64.deb
-Size: 35780
-MD5sum: 370aa18f0b81e60b4d5ad2b9bb5811be
-SHA1: 89a7e2eb2a3345efe73825f024afde7df23c3c19
-SHA256: 0062f923e2f2e08772dc079cf122acb85447f8547d5a3376fdab0f2d9c63fede
-SHA512: 39c014e953baf0c9b113eedb1e9b2cb2ac3ce60a95bf086c5a69c7d0e379cf8bbd837ba452cc898146312697eaa415f4e6c5aecf52575be719c0a83ab789b9dc
+Size: 35782
+MD5sum: 5730343baf40a3e11ef59632c1bc82d7
+SHA1: 4d9a165c091a2b40b320ce3fa15da0eac26af258
+SHA256: 786d926132cd99ccd1fc206176aec17789254e11b985e900d4445116b94657a7
+SHA512: 146240b859267f025cc7fbadb658d4bc57f0a9f19c158b8a45c2b3782441d9b56e0c230d5a4b96c2254aa960f24d131afb856d20e735f78560d4c4319389d6d9
 Description: Solaris name-value library for Linux
  This package contains routines for packing and unpacking name-value
  pairs.  This functionality is used to portably transport data across
@@ -643,11 +643,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 2947
 Filename: dists/nightly/main/binary-amd64/libzfs7-devel_2.4.99-325_amd64.deb
-Size: 333098
-MD5sum: f8c2ced43d6fc9d4c7a232279ac06b1c
-SHA1: e71baad655511950a0f52f9aae4331ef1c3517e0
-SHA256: 82dbc337dce43fc3916041cc68ee80bb98cdf6883b9cf9321f0c77351a07ebb0
-SHA512: cf9c38998d7fbb196d286e7ef5e71d073ef8ae0687db3d51de3fbdd0799ad261a60c675e3a1c9de4abc55c4201e00ebfaedbba99973c65469096462d2679cfb7
+Size: 333084
+MD5sum: 26e137881558e0e6abf349c4c2d1b316
+SHA1: ecb91c02b0a73e839d2420575c409ba1b6ef2ff7
+SHA256: b85463cafbd780ded6cf1d67f0c4fec81be5bccb2d3c269bf9d77379fed40cf7
+SHA512: 34bdfedab14a859fdb3e6998a7515743659555c262c32417a355d0a696930fe5690558b914f228bc60327fe597245a4f3caa13d6f99c43cf77cde8d8916488a5
 Description: Development headers
  This package contains the header files needed for building additional
  applications against the ZFS libraries.
@@ -932,11 +932,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 753
 Filename: dists/nightly/main/binary-amd64/libzfs7_2.4.99-325_amd64.deb
-Size: 251152
-MD5sum: 3141c1c38639e78d48e47a4b682c4a06
-SHA1: e7c787838ceceb7922dc337cc6aeb20c5d28a40f
-SHA256: 98d0042ef5f81becf2e17136ab4bbc20f221ccd82756302398736d48f8d88432
-SHA512: c0b3c8953870d7d0d636d30f8daa7685e6e882625d6388f8f544782e0b9fa020815e092aeed6ad12be4eda631ba26d49629cfb52c260405e987ed7719db57ccd
+Size: 251112
+MD5sum: d117f4859c62f9431055bf50cc0547ec
+SHA1: c95319b5f8138e626b4e0bfa8e5687e450f0224e
+SHA256: 3759b4b375054a2a5a15ea5c7f3945416747c9e755de2a161cf29c74bdb03c43
+SHA512: 5b9412e8433db2d0ba72a4dff01028011cac8b5134e8270ed32dcb61ab5e214461e8f0e6037fbede1281d7dff5dfea22f77e26b89c04b71e1c6101f3addaf998
 Description: Native ZFS filesystem library for Linux
  This package provides support for managing ZFS filesystems
  .
@@ -1235,11 +1235,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 4670
 Filename: dists/nightly/main/binary-amd64/libzpool7_2.4.99-325_amd64.deb
-Size: 1558608
-MD5sum: 274acca1f556872a5a147bbdb1fd1d77
-SHA1: 7a289993c44b383751d28cbdba69ca6edb08f220
-SHA256: e2eaa09145c7dcaf3c653ee1404f20d2506cd330f334125226ef54f1ed91d69e
-SHA512: ca412fb40a67c5957fa6ab0358df3e658b1ec7af50f6e06e9afe894f1afeeb11d4dac725c4d7557ca6fe532529b0fcd3acfd48882c6fabb9e5ae79c16c5c98dc
+Size: 1558592
+MD5sum: c4f29e54320d35f7304c9317e5203a6a
+SHA1: 187e252c1b41f556167f0045af060f9de0ea44f0
+SHA256: 375cb0faee7527492fed6cb21226754bdbcc3e2cbe2cffae6ebb60ca6f72ff5c
+SHA512: e69b5c74acf75a81bf2c73a8cf80e3b109c78628b382b67bdc54119fe620f40c021ca874a9c7f79a1ea0a26b8a336111b6f4c2b00a56ab0b3d1133793abf3079
 Description: Native ZFS pool library for Linux
  This package contains the zpool library, which provides support
  for managing zpools
@@ -1539,11 +1539,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 48
 Filename: dists/nightly/main/binary-amd64/pam-zfs-key_2.4.99-325_amd64.deb
-Size: 11508
-MD5sum: a240b46d70b55825b30901d49229a16a
-SHA1: 390d9208ecd8a30aefb9ddf61dfb7e12fdcb2ef2
-SHA256: 5d2d352c9bbb557c2f1a1acf35c8dcfc9ccba1f00cf10cc12805eda9fb92ca25
-SHA512: 0e9f708efdfc12734cdbc1a7848c3180cb073802f23fd567b79c07f662d0d8eea1d0a262f4346901599f3ce1ee1d318211ec990a62a2f758cf1468d89b5946b2
+Size: 11504
+MD5sum: 2923935c67b6589b80ef5e9dd9bab19d
+SHA1: 46a5c14fdf45ea1a098c987fa739a80578679a1e
+SHA256: 425ee9c03a6cd0c8f9d06b4dac4ccc89acc4b4d0cb8c10fa1e902aa617d1f09b
+SHA512: c8e88533ea673d09021cb0910f8ea5df19591ea959683a1caa82586a8b1d0cd8a80d839b98644596ad73a1f6974fe8acfa5aa557e23b1681537dbfe574ce3ec9
 Description: PAM module for encrypted ZFS datasets
  This package contains the pam_zfs_key PAM module, which provides
  support for unlocking datasets on user login.
@@ -1828,11 +1828,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 930
 Filename: dists/nightly/main/binary-amd64/python3-pyzfs_2.4.99-325_amd64.deb
-Size: 143840
-MD5sum: d1389afe17ce5cbcb6489f2313ed07a5
-SHA1: 9a7cfaa2508864745930a15acd0843e2f7393958
-SHA256: 71b96992afe6cc590c70c0f780dc3929b71173978df588d8c89f611f43213490
-SHA512: fb227cc1f9e5bc51db79e994063a74a91866986e6044205acac0ff694578d5a269f04820b02c401826706380087b247a13b8c28272700e8329e531ce3a1ad750
+Size: 143832
+MD5sum: 9cfdb7a828e71ff1817f2e8b9f6d7bf5
+SHA1: f042f1246ea84abb22051370016b0df0d2dd0a50
+SHA256: 5ba3c7ad33050b29a3e91713ef587a052230102877aa778c21fabfb68ba2486f
+SHA512: 411fd21313775e881686c50cf42b18d982ffea6c71cdf6994e4d3df536b4ee94b0d629736f9e57c8907d154dc59ffc26edb04aa0b2c935bac631a7246d9ca9df
 Description: Python %{python_version} wrapper for libzfs_core
  This package provides a python wrapper for the libzfs_core C library.
  .
@@ -2116,11 +2116,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 63095
 Filename: dists/nightly/main/binary-amd64/zfs-dkms_2.4.99-325_amd64.deb
-Size: 32303644
-MD5sum: 78f67a2112f7a5002284075440ff3fee
-SHA1: 65f247fcca026452ec887f3e4c8a04999564cbfa
-SHA256: 0f480278e99aeac3742977afba6ba3aafa42bfae592b3d0034b104a8f41d1af5
-SHA512: 86b18fb25634314dde982fcbbbb5e7b3fba7e2b3287f9ac2c3943fcb90f601e82e1539c088308f497e4cb7a613064b1b92b150e3c46270ce1c7721343aa6c992
+Size: 32303004
+MD5sum: 5452e093a96e83d668aa9615c4348956
+SHA1: 250b96d1dc345a192d7c1e74b17e94eee1eff052
+SHA256: 6ac79bf79fda14158ecbd8393c159feddfff082a179862133c5bb076955d3dea
+SHA512: 27fa7631e627b13d8509d5a8d3d18c2778d55036414e689585fc61ba9bcf5fac8f0259a010b7bedb3271fcb530a9867f2c26a8783a15b87010625c2615c832f8
 Description: Kernel module(s) (dkms)
  This package contains the dkms ZFS kernel modules.
  .
@@ -2419,11 +2419,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 48
 Filename: dists/nightly/main/binary-amd64/zfs-dracut_2.4.99-325_amd64.deb
-Size: 10130
-MD5sum: daa979d2e1059b51c5aded3dde6507d9
-SHA1: c10421cbe2a4d8900dcb377bd7e43598684c6865
-SHA256: f5b17f46329151a246882efcb3fca4cd7a8ff94ab891c18b94783370f9baaedd
-SHA512: a797af0e671066bcb3d4cc1c75d7364c5c5b0ac84905c23b1e287998ad798850f748500f27b9091718ec44ad8da9b0cfd12af99115939b484a8c4554b6baa3bf
+Size: 10136
+MD5sum: 5b0ba86f658e9b15ba450734c6c5a188
+SHA1: c935119f0ab841a4c894fb37b92d4506d7f1ef0b
+SHA256: 0e2da503b8119f26c1c95a45bf15aa983fcf5d3cda02ca0bca552cb1ecc77708
+SHA512: 388065138c74d7fdfa01ff5a1bdcb13e9011adf7106b737ade3780dc9664e31a3d55f96ded5bb761ace29997051bc1ed9086a784d5478cf699b9caac7562c844
 Description: Dracut module
  This package contains a dracut module used to construct an initramfs
  image which is ZFS aware.
@@ -2723,11 +2723,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 55
 Filename: dists/nightly/main/binary-amd64/zfs-initramfs_2.4.99-325_amd64.deb
-Size: 14522
-MD5sum: c94eedcc483641c4c320227b4f5543ab
-SHA1: bc1bc38e7561fbe424239ea56f49cb8a613e4e19
-SHA256: 79a91ac1b1df88a16c6e23ef563fb384d433f47ef74aea32d70badf11eea2670
-SHA512: 3c1914fb51c82810d753a896d3b2842c13005a9b5da351a0db595c6dac583e9fecaeaafce9481b76211fa1c4dd4b1524e50d5a31fbe2531d59ec057bafe61cf8
+Size: 14524
+MD5sum: 4782358fca6f9e4301e433a0965af464
+SHA1: 0aa7daf43b25e41c251db08c98028c65a380b1d8
+SHA256: 9282e2a0da0517d0ea6afdccbc5dddb96b491fff49df932bc1897da07db32dcc
+SHA512: f86f55ca430443b21e7f05085f92693fccb9b2ee535e1f4ff6965d40ce79bc3832e194ce5f1a944fe368e9dabf791eba22073993f69ed389e3bde31fa66bbbc9
 Description: Initramfs module
  This package contains a initramfs module used to construct an initramfs
  image which is ZFS aware.
@@ -3027,11 +3027,11 @@ Section: alien
 Maintainer: root <root@runnervmmtnos>
 Installed-Size: 36127
 Filename: dists/nightly/main/binary-amd64/zfs-test_2.4.99-325_amd64.deb
-Size: 28703490
-MD5sum: 7bebe90cacf143cc96574ce485817445
-SHA1: 7faaebce40ac64d592222cb9c147d8d0e9e452ef
-SHA256: 94c8b9826ac20f3db2c7ff20cc2a2c1a1e7df38d9c40027048a9e430583e76bd
-SHA512: 1512f5e611fee32cd749a2c2f7a186df0e836d755e1045af360db3571f58b337e5a49fbcefc698aa05e94cd6eb5d79a73e7cc36f660711b6833f9b979b2b74f4
+Size: 28703374
+MD5sum: f031bf3690f005cc7cc3b13ba5b20ed5
+SHA1: f8de2b69a917b9e0bdc045aa8cd4685d96ea1522
+SHA256: f613c790dfc2c1ceb7b643848c63245cb5556ca2520891c9e6c268ca825df069
+SHA512: ae0bd1364a1215c0a6ecb3e5aa1d845a91cc136cc2bbe4ab9800e916e4e1636b62b32f2e00a3960391456f13d096a6ac927d7b785efb59e0ce74edab104abe00
 Description: Test infrastructure
  This package contains test infrastructure and support scripts for
  validating the file system.
@@ -3314,13 +3314,13 @@ Version: 2.4.99-325
 Priority: extra
 Section: alien
 Maintainer: root <root@runnervmmtnos>
-Installed-Size: 2455
+Installed-Size: 2456
 Filename: dists/nightly/main/binary-amd64/zfs_2.4.99-325_amd64.deb
-Size: 762386
-MD5sum: 6fffa59ce49374784a552a6e049e6395
-SHA1: 23ab1e074b44eb1a2477a13788fb3604d2d95e3d
-SHA256: 993d28406cb0b1e8add9f71148d7775229ab434147b76dde78cda7024d381104
-SHA512: da23426b1117f0969b0b4bc4d200989a48a78817b6c368f15cc9e356827378b3106e2cd20c498d57fcd47fc4851e42414c4fa674c65ae00b57fb70093bab790b
+Size: 762376
+MD5sum: 2289672b7c31e2553a7cae479d5b1fe9
+SHA1: 871d84d76be5d60bd1a1e1ebfc12952627ef1980
+SHA256: 9289b8d253d0d65307fb1d5379b6fcccfcff26d361624200ccab03e12d7747c3
+SHA512: 7d15d563d5a1bc7bf1379e9301526a8c6d73f98c66c8ef0bfbf9e7c08cd8c2e9eddc2b66697d10b122a3dc5886725f54e40eba5e34357e0684ef06cd97c681da
 Description: Commands to control the kernel modules and libraries
  This package contains the core ZFS command line utilities.
  .
