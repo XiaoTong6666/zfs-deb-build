@@ -108,21 +108,26 @@ jobs:
           set -e
 
           OWNER="${{ github.repository_owner }}"
-          REPO="$(basename ${{ github.repository }})"
+          REPO="${GITHUB_REPOSITORY#*/}"
 
           echo "查找 nightly release..."
-          RELEASE_ID=$(gh api repos/$OWNER/$REPO/releases/tags/nightly --jq '.id')
+          RELEASE_ID=$(gh api repos/$OWNER/$REPO/releases/tags/nightly --jq '.id' 2>/dev/null || true)
+
+          if [ -z "$RELEASE_ID" ]; then
+            echo "nightly release 不存在，跳过删除"
+            exit 0
+          fi
 
           echo "Release ID: $RELEASE_ID"
+          echo "获取并删除所有旧 assets（分页）..."
 
-          echo "获取旧 assets..."
-          ASSETS=$(gh api repos/$OWNER/$REPO/releases/$RELEASE_ID/assets --jq '.[].id')
+          ASSET_IDS=$(gh api --paginate repos/$OWNER/$REPO/releases/$RELEASE_ID/assets --jq '.[].id')
 
-          for ASSET_ID in $ASSETS; do
+          for ASSET_ID in $ASSET_IDS; do
             echo "删除 asset $ASSET_ID"
             gh api -X DELETE repos/$OWNER/$REPO/releases/assets/$ASSET_ID
           done
-          
+      
       - name: Update Nightly GitHub Release
         if: needs.build.outputs.dist_name == 'nightly'
         uses: softprops/action-gh-release@v1
