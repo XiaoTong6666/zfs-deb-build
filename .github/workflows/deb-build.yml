@@ -100,7 +100,29 @@ jobs:
           name: zfs-deb-packages
           path: debs
 
+      - name: Delete old nightly release assets
+        if: needs.build.outputs.dist_name == 'nightly'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
 
+          OWNER="${{ github.repository_owner }}"
+          REPO="$(basename ${{ github.repository }})"
+
+          echo "查找 nightly release..."
+          RELEASE_ID=$(gh api repos/$OWNER/$REPO/releases/tags/nightly --jq '.id')
+
+          echo "Release ID: $RELEASE_ID"
+
+          echo "获取旧 assets..."
+          ASSETS=$(gh api repos/$OWNER/$REPO/releases/$RELEASE_ID/assets --jq '.[].id')
+
+          for ASSET_ID in $ASSETS; do
+            echo "删除 asset $ASSET_ID"
+            gh api -X DELETE repos/$OWNER/$REPO/releases/assets/$ASSET_ID
+          done
+          
       - name: Update Nightly GitHub Release
         if: needs.build.outputs.dist_name == 'nightly'
         uses: softprops/action-gh-release@v1
