@@ -4,39 +4,39 @@ Hash: SHA512
 Architectures: amd64
 Codename: nightly
 Components: main
-Date: Wed, 05 Aug 2026 17:39:47 +0000
+Date: Fri, 07 Aug 2026 16:53:22 +0000
 Label: XiaoTong6666 ZFS Repo
 Origin: XiaoTong6666 ZFS
 Suite: nightly
 MD5Sum:
- 1f0c2af7ad0e4b042a31d29e88f8ff61              163 Release
- b2123da4ccb9b2d473e405b39f8b8d57          1219416 main/binary-amd64/Packages
- cd60343f33fb66f8b125c8721afc7cc5           303557 main/binary-amd64/Packages.gz
+ ff32c86e5907475ae8d2b21c9556b1e7              163 Release
+ c827d1cbd24e07b92a8516132857a51f          1227600 main/binary-amd64/Packages
+ b919053a3cc12d7e080ad51d6c1abc7a           305538 main/binary-amd64/Packages.gz
 SHA1:
- 4afd653950ad485c684eac6fa78fb53eb727e8ab              163 Release
- 44c25444343686ddc6f0d7279e6dfcba20f72151          1219416 main/binary-amd64/Packages
- 1770c88d042985990497d0bee3a0eb79b0badd2a           303557 main/binary-amd64/Packages.gz
+ 7247b84d902da50acedd66d2ae47e994519e887c              163 Release
+ 48ec815233f2083307fd7a08038607eaa3a8c837          1227600 main/binary-amd64/Packages
+ 9998b57738834e7bd2c91f2d9784cd8a84733d8b           305538 main/binary-amd64/Packages.gz
 SHA256:
- c8dcffe43b62039934f132ad67bed254e1f548dbb2602049929dd6668f5e58ca              163 Release
- 266fcfd26879db906a0c19992503a2e943222bbd4d5db74ac5f23ca24a05ed6e          1219416 main/binary-amd64/Packages
- 0fa7a01c95687caa4a36dc3315474272b9c884629a61d771a325422af5523580           303557 main/binary-amd64/Packages.gz
+ d809f902243f3310d73b8b482b1904dd13bb450e225be3c701f33281bde25c96              163 Release
+ d6af7921ed07baded968ee295b73d494e0aaea7b73ed225b7ea6df775fc2a501          1227600 main/binary-amd64/Packages
+ b3ead71caa31fcf0fcd67223586c13a48a29a6cf7eb4c438d5fd8daaca784be6           305538 main/binary-amd64/Packages.gz
 SHA512:
- 1dfa4460903a9cfbe175f797dc151e8b7b4e9070dd0a9949882c07d23edbde43263c06fe77918d66943fdce72f2ce2efdd480c8e7f22fe61d65ba5c586a85d14              163 Release
- 16825b415380a4a51e0cc7ec448084db5df1fa0ba78e57c42d61ae32057107cd610fffc327f0745f95232029604f53a780826111e1bef95e03aa480f5e03e9dd          1219416 main/binary-amd64/Packages
- b16fab80979b6d45830919a0079f2b5fa133949155fac9d5c8038f966d9513b1267b85ce19dc81fc4d4e477d741871dad7085e76a718a7c171cb87a56f88c6b6           303557 main/binary-amd64/Packages.gz
+ fe967f7cff7951f33df0c093dc692f63eea7b7600ce40d3b81a9ee2fd8b6d49b18f873bea747b7cd09faa8647f07d29f2b2f356c80c43931a6e3c0a733f41a10              163 Release
+ 960c410541fadadf1810cad11922859ebf64130bda24df19f1468468402b4761043d6368a077e81aef7517d2573531905fc7a928a7b57427045b28a391227f3c          1227600 main/binary-amd64/Packages
+ e874b902a7a20288679a84a054fc89e88ad5028e940d41b2a2522f96f3f93eb396b2a4a309f52e94d73d94ce72314aebf97a6a14087cd561801e39bb966d9d0c           305538 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEm5KHHZEKRbXFJfj12gnQrO9wTkcFAmpzdWMACgkQ2gnQrO9w
-TkdELw/8C+8cBLiyhNplry9/v25mLKGZa0jdUNJ87r0R4m4KY7oGKw1x551aKfVZ
-VkS82UO3Rodc/pgMhhzjbEyriUmalSsQU9nosIzQmvCEYen65yspMw5ma7WC7nWS
-ItxUXdiaK1vv42iiZSe0Nyj2sXAZLJjjsHTpNTeDbmgfiMaTA5iG4zp1sB/Ppkqb
-6q/ZEfcCMPbyaAa+y0Tk2j3BdZSHaWUSCr//V2HWsprjmq+bTZpiWvi1tih3+Vw+
-SRCfzozG0CTEGYLJPNhG1jiwrbFi7sNCz1C10laYb3G00DWE8Wgw5HVY9SNBUdYo
-pja+B3m1p2R64iQH98fgO5lsgx9lHeMQHNvG26Dl5af8ycIbWqubUCy/2Ye0ny0j
-kTyjbyMBJEtXpCRgp9gaJO5iRTuLARYgPBJ7qkipH3MMN2W+vxGq+41QYCEgnc1t
-hUAhfWBh14j26nr3GfSdCS6HeIomPjKDikFHT993DEf2EEm9xgvWc+4jEoy35XDZ
-rrGCx8x3yaN3HrdbVWp5XD7r5fbhZpm7UZYf2UiMCocS9BChChPP49lTa4EP6jUa
-aoEgMVKsFsROWtBcsAnJepIAmAEho5ALneBot6fx2HprT8L3KY/eeKdYHy7P33oM
-uWnVOv/8+FGqQBBIDZIDT85e/cGcyfWvB+yoavdZLV+XZocDtvs=
-=U2dp
+iQIzBAEBCgAdFiEEm5KHHZEKRbXFJfj12gnQrO9wTkcFAmp2DYIACgkQ2gnQrO9w
+Tkef8g/+NgGoN8PVAjRz2aEa97JLbBI4DmwLOEbfeqUJB2ueHKGjA0jm3NArHe92
+4d2n3WU3vdJmCbLVu6pDUitvrLCEI1vv1PyKgYRxk+MbhLbh7AONhBaHvY2YRpmr
+2jEFJ9VBXhtT51h5XkC4jNSL4p85FDCy2qChAQLtixGmGwZMQX/vUiZF0cvuUZbf
+K/mvE9v+HNY/uOQmG5x2Cam2tPE4KSgqoJfUXyPk1Uwffz2NwI+KuWEJ3Lts+lvz
+gA1m1/MEKgSF6yaujb7a4rXfb+BNTKzkFa48FtzXI7LDJwwvqPjDwySEpoYhpkWz
+U8/zSsKcEclGPqLYmSG2ylhgqfMkCoZC3Sht+U2psEvss9T2Rh+2/NkGZRZFsKsa
+QNIULokkX4re/WLtfsZ6IRmyMaNqELs4yV4+/T60R0iHinZuTuFJD/QbTkwXwhaH
+WhzYrT1QN6NS9H/oJ0D1BBEoMQWvhaxLep2cbGRkw6oKnS7rO7RrS16sgMepaI14
+eMU4EpHNxPqdQKGL9LEqi7DRYsQZf6YxvM0fjYpQsPwvHt6W2jyxO7fnNJSNtmT1
+fMHASrqIjOeyTSNTLPH6VLoFzRF4gDiRxy95lB4GRD7xni9fAy+j+5FXeuPXiIk0
+BuuQUvLtncnwVTUlw5MBTG6KPRufRgEHfODf4fLIpGZzpVTMI64=
+=xPkr
 -----END PGP SIGNATURE-----
