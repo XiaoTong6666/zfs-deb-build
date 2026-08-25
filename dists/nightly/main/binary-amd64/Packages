@@ -3562,6 +3562,28 @@ Description: Solaris name-value library for Linux
  .
  (Converted from a rpm package by alien version 8.95.6.)
 
+Package: libnvpair3
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 144
+Depends: libc6 (>= 2.38), libtirpc3t64 (>= 1.0.2)
+Filename: dists/nightly/main/binary-amd64/libnvpair3_2.4.99-981.g904d4327f_amd64.deb
+Size: 36334
+MD5sum: c29210b1273df73d75c58d1287669039
+SHA1: e2deebfda8707f3ac3c0e75ec14de78908e0247c
+SHA256: 37682ded289b77022b9780e399303429ad45c2555308ef200aa797d5268ac4bc
+SHA512: 88b77959b8f18afb2890932873c86d04834af991dfc0930b7e01508e6bdf6fee4ee60beaa0086e74dab2af1769e9f787beab8d80ebc0efcbec373d4d26abffaa
+Description: Solaris name-value library for Linux
+ This package contains routines for packing and unpacking name-value
+ pairs.  This functionality is used to portably transport data across
+ process boundaries, between kernel and user space, and can be used
+ to write self describing data structures on disk.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
 Package: libzfs7-devel
 Architecture: amd64
 Version: 2.4.99-268
@@ -6640,6 +6662,25 @@ Description: Development headers
  .
  (Converted from a rpm package by alien version 8.95.6.)
 
+Package: libzfs7-devel
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 2890
+Filename: dists/nightly/main/binary-amd64/libzfs7-devel_2.4.99-981.g904d4327f_amd64.deb
+Size: 338630
+MD5sum: c1937d52d8d8e76241f31dca53811c64
+SHA1: a2fea49911391b5012f07e541894eb90a6bdecc2
+SHA256: ea28f439b41fe77ab770d96f58aa477633902956996c874995d680a15753bc24
+SHA512: 19085f258266f00d1601d052f897e02305196a704b616ada266611cce4684053066657707abb457c9990495427df87d67687a9369479a194a038c35185fef6dd
+Description: Development headers
+ This package contains the header files needed for building additional
+ applications against the ZFS libraries.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
 Package: libzfs7
 Architecture: amd64
 Version: 2.4.99-268
@@ -9551,6 +9592,24 @@ MD5sum: 3a993a2e03b676d98983417649a7a226
 SHA1: 17e161887e5651cef36a3be749f8c0edd9cb4448
 SHA256: ebcba0b6ba261ebae854ef9cfcdb76a967ada47fbff6b1757c48406a633f2092
 SHA512: dc711ad28e0cd956dc75a97645c4946c937566daaffb3271a3caaee5769e7215ac83b88a0d946d9ae882565504e96df18b16fc1231610518e2a793be16d9f491
+Description: Native ZFS filesystem library for Linux
+ This package provides support for managing ZFS filesystems
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
+Package: libzfs7
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 811
+Filename: dists/nightly/main/binary-amd64/libzfs7_2.4.99-981.g904d4327f_amd64.deb
+Size: 272690
+MD5sum: 39338a80f68d63ce3bb82eb3a26c78fa
+SHA1: 383cfcf009b3dd01dae4868b535eb8e32de4fd78
+SHA256: 90f7330b6da722e9841a891378351c31bd6c976bd4d47ba1bf06bf8090aba59c
+SHA512: 0769da7f123edb51cc5e9773bb724d7494d18d92258aa6b2c5722b14fa272ccbf4e7ce6e03bae7b4aa91d5da943ba457e33d604ab7826e9477fa48d015b30a26
 Description: Native ZFS filesystem library for Linux
  This package provides support for managing ZFS filesystems
  .
@@ -12628,6 +12687,25 @@ MD5sum: 71e75373c15c97558c899ace38d3d26d
 SHA1: 79921f5c37f0ee932b7c5964089d71bed2745c03
 SHA256: c81f063c893ee372583deab18c3112b8594758c52fb06cdcda41829923216631
 SHA512: 3d95713f0747e7c0634182d5dd24b2563c174c91b5f5fa45f55fff9295d9491ff06ca801cac0161fe85a27753cb4281b2feccd376327063b7deb18b9af5163b6
+Description: Native ZFS pool library for Linux
+ This package contains the zpool library, which provides support
+ for managing zpools
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
+Package: libzpool7
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 4899
+Filename: dists/nightly/main/binary-amd64/libzpool7_2.4.99-981.g904d4327f_amd64.deb
+Size: 1629812
+MD5sum: 28fe8639dbf087c33316d92db82ffe6c
+SHA1: 2a731258b9a793a2dfc0b93b92e8cac4f7742071
+SHA256: 636a11d3fb4de8de2ce5c28c7fd06ca4228c686b4e9eab5e9ae5601ae28c6801
+SHA512: 6aeacb1b253a7cb12ccd94151db3f05ac44fff39e75c57feaa69f05caec443856a1fef34963e239c5fa1c2b63446f3703a6185c0b9bdc5c6729e0b84c25d6d76
 Description: Native ZFS pool library for Linux
  This package contains the zpool library, which provides support
  for managing zpools
@@ -15712,6 +15790,25 @@ Description: PAM module for encrypted ZFS datasets
  .
  (Converted from a rpm package by alien version 8.95.6.)
 
+Package: pam-zfs-key
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 49
+Filename: dists/nightly/main/binary-amd64/pam-zfs-key_2.4.99-981.g904d4327f_amd64.deb
+Size: 12240
+MD5sum: 9bcf3846803aa61212c044eedfde5b47
+SHA1: f980d9a4ba3dd601adeaccad127628bbef5e55b8
+SHA256: 7c1245cff4c5f5686672035d1f848d6b0337d80f512e5f72e844d87bbfe5df83
+SHA512: 7fc7a2339651392499d4e02a5652cbe4bf27b8f4b2afb6f7ccc443dc803948e00f53e76f763572dd0a0db4bc71e58c0cd6ed54e72bd15f35da37c42d5ed4daa5
+Description: PAM module for encrypted ZFS datasets
+ This package contains the pam_zfs_key PAM module, which provides
+ support for unlocking datasets on user login.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
 Package: python3-pyzfs
 Architecture: amd64
 Version: 2.4.99-268
@@ -18628,6 +18725,24 @@ Description: Python %{python_version} wrapper for libzfs_core
  .
  (Converted from a rpm package by alien version 8.95.6.)
 
+Package: python3-pyzfs
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 869
+Filename: dists/nightly/main/binary-amd64/python3-pyzfs_2.4.99-981.g904d4327f_amd64.deb
+Size: 134106
+MD5sum: f6667c5b4dad56cb0ff7ce968dc86e5b
+SHA1: 684a943d80c98c9d622e8f1459b03d0fefb830b4
+SHA256: 6bcb85aeb41cdd1bdec9dc38f13c2779b64c7896d75aa7edeaa3f3b9e1794e19
+SHA512: 4bb38849af03ac9d1b1c847c19d5c32ab366fcecdf7a5ce192d5a1228d086609271788dea6d4a33b9eb4ad34ee88455a58aee7ce7c879f34fac069683604b543
+Description: Python %{python_version} wrapper for libzfs_core
+ This package provides a python wrapper for the libzfs_core C library.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
 Package: zfs-dkms
 Architecture: amd64
 Version: 2.4.99-268
@@ -21539,6 +21654,24 @@ MD5sum: 81f41ef6ecc147e219a14bd189239afa
 SHA1: 3feae3f5fdd952930eee2f614dcd1bd834531d7e
 SHA256: 74d2d22451c4af65c7c4c6dd0482e54114aa16869f0ef0942631f4196fe12cc0
 SHA512: e7318fb4c6bb1570431faf301cac55ab223db6310c8f52ccfa5346b829eb42b78cb0cf2cd7428595aefdbb56449c554d39e96ae4487d48b2731226bc068d3a5b
+Description: Kernel module(s) (dkms)
+ This package contains the dkms ZFS kernel modules.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
+Package: zfs-dkms
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 64972
+Filename: dists/nightly/main/binary-amd64/zfs-dkms_2.4.99-981.g904d4327f_amd64.deb
+Size: 33054496
+MD5sum: 8956236185ad936eada56fa26c31427c
+SHA1: 55814ff8382e6e241fe554ef506beffc1c8c40ba
+SHA256: 0bdecba794adf006ca62df820c2dc29dbb17a0219063a42aafee1b21c1f22d1e
+SHA512: c299d34e5d00f4585b2609efe1491b26d1a4ec96fae2857e5d75a9eb86bcaa9e5711cab8935064389b6ed5d122e87ab3d4fe0ac8d8700546bdbab2002aea6f24
 Description: Kernel module(s) (dkms)
  This package contains the dkms ZFS kernel modules.
  .
@@ -24616,6 +24749,25 @@ MD5sum: 5b82d54b0ff1a4d7690b76d2b924b38c
 SHA1: baa2bcc9fa7338c581f4a7195ce96cfe44e9555e
 SHA256: f4db39b3e686e7aded2604199a56340f3bdbf5fafa4a952147468218ebf597a2
 SHA512: 3321e1d4171f133cfdcaaabb0e5c1eee0992fa276e313274572c5d3867ead0b77f440d97dc0079668c8e04fb72923b469772aa470a98f2ca97ad38ea926f7c6b
+Description: Dracut module
+ This package contains a dracut module used to construct an initramfs
+ image which is ZFS aware.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
+Package: zfs-dracut
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 48
+Filename: dists/nightly/main/binary-amd64/zfs-dracut_2.4.99-981.g904d4327f_amd64.deb
+Size: 10152
+MD5sum: 1ce99451806ada1e8094fce4090e8dca
+SHA1: 3b49e46d9c362dbae8b4eb867aba4518717e99c2
+SHA256: 776b3b598f68de38c64381b378ed6d3b906b427d668fb6cd6b0b5b20ce9470af
+SHA512: 8679454a2d79038555701ad0946fe30857d87cf1c0bc9a37ead50ee5adc3d79dc709c6429800cf895a1f3bea5f953d1b04c9f17bcbd72bb5d02959b0230961bf
 Description: Dracut module
  This package contains a dracut module used to construct an initramfs
  image which is ZFS aware.
@@ -27700,6 +27852,25 @@ Description: Initramfs module
  .
  (Converted from a rpm package by alien version 8.95.6.)
 
+Package: zfs-initramfs
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 55
+Filename: dists/nightly/main/binary-amd64/zfs-initramfs_2.4.99-981.g904d4327f_amd64.deb
+Size: 14516
+MD5sum: c3377cc5045d19ca408d53efd06d074f
+SHA1: d4e19a3982830f7cfed117ada00951964ebd164c
+SHA256: a98e12907098e171e0019cb12c2b6f4e42b1a0241a2f8ec8588b0993712c6497
+SHA512: f4a274f06a6f1bd336055cc3e7aabc360d2744ebbdefff672221b8f44ee6c54c2b21b7856c6d9cf11a3b3f35953de20749684fb7b6bc98d8645c7197d8d27a9f
+Description: Initramfs module
+ This package contains a initramfs module used to construct an initramfs
+ image which is ZFS aware.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
 Package: zfs-test
 Architecture: amd64
 Version: 2.4.99-268
@@ -30778,6 +30949,25 @@ Description: Test infrastructure
  .
  (Converted from a rpm package by alien version 8.95.6.)
 
+Package: zfs-test
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 36664
+Filename: dists/nightly/main/binary-amd64/zfs-test_2.4.99-981.g904d4327f_amd64.deb
+Size: 29106266
+MD5sum: 5373b2779c0bdbb1810874c1858c03dd
+SHA1: 372e1e42dcf45708825695211e642711be44a8aa
+SHA256: a800dc89db65da7250af2bb412f2e58e4e3519eb501b36a87f3040303b33edef
+SHA512: 003c9d591add202557274e12bb03a8dc5444ef19313dee1825256b708deda31b7d41e43497d0e75cded6b28ad183219aaa7749fb04771a3f367bdadcb5d08d67
+Description: Test infrastructure
+ This package contains test infrastructure and support scripts for
+ validating the file system.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
 Package: zfs
 Architecture: amd64
 Version: 2.4.99-268
@@ -33689,6 +33879,24 @@ MD5sum: 06cc0e001ba632995c88f5c96ba093f7
 SHA1: bbc2de785e2a5dcddf52db6f14e428b942e526a2
 SHA256: 931d13e2ef78de076e423fc73ddcc86064f442d36789d3b73486403329867cca
 SHA512: 2541d76f8e6b6ad036da061807a15280effffcb8b72e56dca09302f671ed2eafcec3a6287b3fcb2e32cdf7a8e68922b266ea15acce72c7e774dd17e85546f5eb
+Description: Commands to control the kernel modules and libraries
+ This package contains the core ZFS command line utilities.
+ .
+ (Converted from a rpm package by alien version 8.95.6.)
+
+Package: zfs
+Architecture: amd64
+Version: 2.4.99-981.g904d4327f
+Priority: extra
+Section: alien
+Maintainer: root <root@runnervm76f27>
+Installed-Size: 2551
+Filename: dists/nightly/main/binary-amd64/zfs_2.4.99-981.g904d4327f_amd64.deb
+Size: 807426
+MD5sum: 20feacfa6f4c14689720a01b6fdc0c7d
+SHA1: bc3aa49797e8a8299eb8e59843ca93d397e0a60f
+SHA256: 52563f3f7a0b70bac8514e1d85c39b3ac7bb346ce2f6a6ad90faf8b7cbf08a62
+SHA512: c2ab2fa04d304351c28d7ab6476a1aeceb5b7743ddf118a28251552976e833cc6c890ac152c8b997a9f9c93ad24fb1e5c8242d19d8f8384f1882309a80738660
 Description: Commands to control the kernel modules and libraries
  This package contains the core ZFS command line utilities.
  .
