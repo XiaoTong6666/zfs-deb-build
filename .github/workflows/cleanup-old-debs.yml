@@ -1,0 +1,181 @@
+name: Cleanup old nightly DEB packages
+
+on:
+  schedule:
+    - cron: '15 5 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - gh-pages
+    paths:
+      - '.github/workflows/cleanup-old-debs.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cleanup-old-nightly-debs
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch gh-pages metadata with a partial clone
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir repo
+          cd repo
+          git init
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config core.sparseCheckout true
+          git config core.sparseCheckoutCone false
+          git config remote.origin.promisor true
+          git config remote.origin.partialclonefilter blob:none
+          cat > .git/info/sparse-checkout <<'EOF'
+          /.github/
+          /dists/nightly/Release
+          /dists/nightly/InRelease
+          /dists/nightly/Release.gpg
+          /dists/nightly/main/binary-amd64/Packages
+          /dists/nightly/main/binary-amd64/Packages.gz
+          EOF
+          git -c protocol.version=2 fetch --filter=blob:none --no-tags origin gh-pages
+          git checkout -B gh-pages FETCH_HEAD
+
+      - name: Remove DEB packages older than 180 days
+        id: prune
+        working-directory: repo
+        env:
+          RETENTION_DAYS: '180'
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          import subprocess
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+
+          package_dir = "dists/nightly/main/binary-amd64"
+          cutoff = int((datetime.now(timezone.utc) - timedelta(days=int(os.environ["RETENTION_DAYS"]))).timestamp())
+
+          history = subprocess.check_output(
+              ["git", "log", "--format=@@%ct", "--name-only", "--no-renames", "--", package_dir],
+              text=True,
+          )
+          last_changed = {}
+          commit_time = None
+          for line in history.splitlines():
+              if line.startswith("@@"):
+                  commit_time = int(line[2:])
+              elif line.startswith(package_dir + "/") and line.endswith(".deb"):
+                  if commit_time is not None:
+                      last_changed.setdefault(line, commit_time)
+
+          current = subprocess.check_output(
+              ["git", "ls-tree", "-r", "--name-only", "HEAD", "--", package_dir],
+              text=True,
+          ).splitlines()
+          debs = [path for path in current if path.endswith(".deb")]
+
+          missing_dates = [path for path in debs if path not in last_changed]
+          if missing_dates:
+              raise SystemExit(
+                  "Refusing to delete anything: could not determine the last-change date "
+                  f"for {len(missing_dates)} current package(s); first: {missing_dates[0]}"
+              )
+
+          old = [path for path in debs if last_changed[path] < cutoff]
+          output_path = os.environ["GITHUB_OUTPUT"]
+          with open(output_path, "a", encoding="utf-8") as output:
+              output.write(f"deleted_count={len(old)}\n")
+
+          if not old:
+              print("No nightly DEB packages are older than 180 days.")
+              raise SystemExit(0)
+
+          packages_path = Path(package_dir) / "Packages"
+          packages_text = packages_path.read_text(encoding="utf-8")
+          old_set = set(old)
+          stanzas = [part for part in re.split(r"\n\s*\n", packages_text.strip()) if part.strip()]
+          kept = []
+          removed_stanzas = 0
+          for stanza in stanzas:
+              match = re.search(r"(?m)^Filename:\s*(\S+)", stanza)
+              filename = match.group(1) if match else None
+              if filename in old_set:
+                  removed_stanzas += 1
+              else:
+                  kept.append(stanza)
+
+          packages_path.write_text(
+              ("\n\n".join(kept) + "\n") if kept else "",
+              encoding="utf-8",
+          )
+
+          subprocess.run(
+              ["git", "rm", "--cached", "--sparse", "--ignore-unmatch", "--", *old],
+              check=True,
+          )
+          print(f"Removed {len(old)} old .deb files ({len(old) - removed_stanzas} had no Packages stanza).")
+          print(f"Removed {removed_stanzas} package-index stanza(s).")
+          PY
+
+      - name: Install APT repository tools
+        if: steps.prune.outputs.deleted_count != '0'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends apt-utils gnupg
+
+      - name: Regenerate APT indexes
+        if: steps.prune.outputs.deleted_count != '0'
+        working-directory: repo
+        run: |
+          set -euo pipefail
+          gzip -n -9 -c dists/nightly/main/binary-amd64/Packages > dists/nightly/main/binary-amd64/Packages.gz
+          cd dists/nightly
+          apt-ftparchive \
+            -o APT::FTPArchive::Release::Origin="XiaoTong6666 ZFS" \
+            -o APT::FTPArchive::Release::Label="XiaoTong6666 ZFS Repo" \
+            -o APT::FTPArchive::Release::Suite="nightly" \
+            -o APT::FTPArchive::Release::Codename="nightly" \
+            -o APT::FTPArchive::Release::Architectures="amd64" \
+            -o APT::FTPArchive::Release::Components="main" \
+            release . > Release
+
+      - name: Import APT signing key
+        if: steps.prune.outputs.deleted_count != '0'
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Sign APT repository metadata
+        if: steps.prune.outputs.deleted_count != '0'
+        working-directory: repo
+        env:
+          GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
+        run: |
+          set -euo pipefail
+          gpg --clearsign --yes -u "$GPG_FINGERPRINT" -o dists/nightly/InRelease dists/nightly/Release
+          gpg -abs --yes -u "$GPG_FINGERPRINT" -o dists/nightly/Release.gpg dists/nightly/Release
+
+      - name: Commit and push cleanup
+        if: steps.prune.outputs.deleted_count != '0'
+        working-directory: repo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git add -A dists/nightly
+          if ! git diff --cached --quiet; then
+            git commit -m "Prune nightly DEB packages older than 180 days"
+            git push origin HEAD:gh-pages
+          else
+            echo "No repository changes to publish."
+          fi
