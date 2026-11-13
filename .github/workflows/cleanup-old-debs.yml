@@ -172,7 +172,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          git add -A dists/nightly
+          git add -- \
+            dists/nightly/main/binary-amd64/Packages \
+            dists/nightly/main/binary-amd64/Packages.gz \
+            dists/nightly/Release \
+            dists/nightly/InRelease \
+            dists/nightly/Release.gpg
           if ! git diff --cached --quiet; then
             git commit -m "Prune nightly DEB packages older than 180 days"
             git push origin HEAD:gh-pages
