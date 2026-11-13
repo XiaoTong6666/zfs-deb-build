@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch gh-pages metadata with a partial clone
+        id: checkout
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -46,6 +47,7 @@ jobs:
           EOF
           git -c protocol.version=2 fetch --filter=blob:none --no-tags origin gh-pages
           git checkout -B gh-pages FETCH_HEAD
+          echo "base_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Remove DEB packages older than 180 days
         id: prune
@@ -117,10 +119,8 @@ jobs:
               encoding="utf-8",
           )
 
-          subprocess.run(
-              ["git", "rm", "--cached", "--sparse", "--ignore-unmatch", "--", *old],
-              check=True,
-          )
+          old_files_path = Path(os.environ["RUNNER_TEMP"]) / "old-nightly-debs.json"
+          old_files_path.write_text(__import__("json").dumps(old), encoding="utf-8")
           print(f"Removed {len(old)} old .deb files ({len(old) - removed_stanzas} had no Packages stanza).")
           print(f"Removed {removed_stanzas} package-index stanza(s).")
           PY
@@ -165,22 +165,94 @@ jobs:
           gpg --clearsign --yes -u "$GPG_FINGERPRINT" -o dists/nightly/InRelease dists/nightly/Release
           gpg -abs --yes -u "$GPG_FINGERPRINT" -o dists/nightly/Release.gpg dists/nightly/Release
 
-      - name: Commit and push cleanup
+      - name: Commit cleanup through the GitHub Git Data API
         if: steps.prune.outputs.deleted_count != '0'
         working-directory: repo
         env:
           GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          BASE_SHA: ${{ steps.checkout.outputs.base_sha }}
         run: |
-          set -euo pipefail
-          git add -- \
-            dists/nightly/main/binary-amd64/Packages \
-            dists/nightly/main/binary-amd64/Packages.gz \
-            dists/nightly/Release \
-            dists/nightly/InRelease \
-            dists/nightly/Release.gpg
-          if ! git diff --cached --quiet; then
-            git commit -m "Prune nightly DEB packages older than 180 days"
-            git push origin HEAD:gh-pages
-          else
-            echo "No repository changes to publish."
-          fi
+          python3 - <<'PY'
+          import base64
+          import json
+          import os
+          import subprocess
+          import tempfile
+          from pathlib import Path
+
+          repository = os.environ["GITHUB_REPOSITORY"]
+          expected_base = os.environ["BASE_SHA"]
+          old_files = json.loads((Path(os.environ["RUNNER_TEMP"]) / "old-nightly-debs.json").read_text())
+
+          def api(path, method="GET", payload=None):
+              command = ["gh", "api"]
+              if method != "GET":
+                  command += ["--method", method]
+              command.append(path)
+              if payload is None:
+                  result = subprocess.run(command, check=True, capture_output=True, text=True)
+              else:
+                  with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".json") as request:
+                      json.dump(payload, request)
+                      request.flush()
+                      command += ["--input", request.name]
+                      result = subprocess.run(command, check=True, capture_output=True, text=True)
+              return json.loads(result.stdout)
+
+          ref = api(f"repos/{repository}/git/ref/heads/gh-pages")
+          head_sha = ref["object"]["sha"]
+          if head_sha != expected_base:
+              raise SystemExit(
+                  "gh-pages changed during cleanup; refusing to overwrite a newer APT publish. "
+                  f"Expected {expected_base}, found {head_sha}."
+              )
+
+          head = api(f"repos/{repository}/git/commits/{head_sha}")
+          entries = [
+              {"path": path, "mode": "100644", "type": "blob", "sha": None}
+              for path in old_files
+          ]
+
+          metadata_files = [
+              "dists/nightly/main/binary-amd64/Packages",
+              "dists/nightly/main/binary-amd64/Packages.gz",
+              "dists/nightly/Release",
+              "dists/nightly/InRelease",
+              "dists/nightly/Release.gpg",
+          ]
+          for filename in metadata_files:
+              payload = {
+                  "content": base64.b64encode(Path(filename).read_bytes()).decode("ascii"),
+                  "encoding": "base64",
+              }
+              blob = api(f"repos/{repository}/git/blobs", method="POST", payload=payload)
+              entries.append({
+                  "path": filename,
+                  "mode": "100644",
+                  "type": "blob",
+                  "sha": blob["sha"],
+              })
+
+          new_tree = api(
+              f"repos/{repository}/git/trees",
+              method="POST",
+              payload={"base_tree": head["tree"]["sha"], "tree": entries},
+          )
+          new_commit = api(
+              f"repos/{repository}/git/commits",
+              method="POST",
+              payload={
+                  "message": "Prune nightly DEB packages older than 180 days",
+                  "tree": new_tree["sha"],
+                  "parents": [head_sha],
+              },
+          )
+          api(
+              f"repos/{repository}/git/refs/heads/gh-pages",
+              method="PATCH",
+              payload={"sha": new_commit["sha"], "force": False},
+          )
+          print(f"Committed cleanup: removed {len(old_files)} old DEB files.")
+          print(f"Commit: {new_commit['sha']}")
+          PY
