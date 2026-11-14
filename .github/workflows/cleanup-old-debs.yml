@@ -49,11 +49,11 @@ jobs:
           git checkout -B gh-pages FETCH_HEAD
           echo "base_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Remove DEB packages older than 180 days
+      - name: Remove DEB packages older than 90 days
         id: prune
         working-directory: repo
         env:
-          RETENTION_DAYS: '180'
+          RETENTION_DAYS: '90'
         run: |
           python3 - <<'PY'
           import os
@@ -97,7 +97,7 @@ jobs:
               output.write(f"deleted_count={len(old)}\n")
 
           if not old:
-              print("No nightly DEB packages are older than 180 days.")
+              print("No nightly DEB packages are older than 90 days.")
               raise SystemExit(0)
 
           packages_path = Path(package_dir) / "Packages"
@@ -243,7 +243,7 @@ jobs:
               f"repos/{repository}/git/commits",
               method="POST",
               payload={
-                  "message": "Prune nightly DEB packages older than 180 days",
+                  "message": "Prune nightly DEB packages older than 90 days",
                   "tree": new_tree["sha"],
                   "parents": [head_sha],
               },
