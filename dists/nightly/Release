@@ -1,23 +1,23 @@
 Architectures: amd64
 Codename: nightly
 Components: main
-Date: Thu, 19 Nov 2026 14:23:07 +0000
+Date: Thu, 19 Nov 2026 16:46:39 +0000
 Label: XiaoTong6666 ZFS Repo
 Origin: XiaoTong6666 ZFS
 Suite: nightly
 MD5Sum:
- 99ef9d6025025886174e27a19cee3df4              163 Release
- 1d9ef2745094504104ba1d1459a8e5a5           576278 main/binary-amd64/Packages
- ff54f01f7b7e13701dbb5bdabfa6df6e           144942 main/binary-amd64/Packages.gz
+ e2bb5009e1216b7a39870d10246b7277              163 Release
+ 3242fe2fd92b2f97cbc28126dfecc6b3           382150 main/binary-amd64/Packages
+ 923a59b24bda9c4b06788c9da3f5dfa9            95947 main/binary-amd64/Packages.gz
 SHA1:
- 89331d199258a758505df18fe96fee2b6d36a253              163 Release
- c237839775450949bf8b83a34c84909da85e363d           576278 main/binary-amd64/Packages
- 2d2629cfd2f30c62fbe4fb41c45149e45d6ad379           144942 main/binary-amd64/Packages.gz
+ 6e1564f03703f814f1c82ca04fde751827036d6d              163 Release
+ 827b498a0d4f64357c410b00afee1dc3f1342a75           382150 main/binary-amd64/Packages
+ 5441dc0cfcc50dd843e0b9dd2b69d8ce7536dbeb            95947 main/binary-amd64/Packages.gz
 SHA256:
- c38b62fbaeff207a7f3cd0a4e2436b944b8674adf28511c82254bd41246bc36f              163 Release
- 768a566beec0724360a42f8084424b17f25b90b77e9c66d0be22c5b1113efe58           576278 main/binary-amd64/Packages
- aa74a2a3e6f58da0b2abc063ac017f1b60724a6534f9bf8194518fe65798eb4a           144942 main/binary-amd64/Packages.gz
+ 115eece4db11df16c5a746bff08cb64a526a004ac609b92f70621f64870b21a4              163 Release
+ b5aa8134992c5b3befd9b5ede215f1ea3fe51d2f5bce3cde3d722ac9c7763837           382150 main/binary-amd64/Packages
+ fd9eaa03d3b076b0da272e7fc372c60ef5135d9c79f452e86b76be61a961590b            95947 main/binary-amd64/Packages.gz
 SHA512:
- 77ae36804b9b3e496359126de761872f8ab4c10056c230e20ef5acd2e3d498633e9fb1e7d00f194327ecf00869413082e74e6c6b43079030518b0445087e57b8              163 Release
- 1e92984c22839b84aabffcaba64f0d3cb99469a1dbaeeda3187688c30ae307c5762d3de04116e78a90ea18839f8c50c3ba8e22f872334b0acdc2fa4913703454           576278 main/binary-amd64/Packages
- c325e88d05680e9dd449437e8d2a2a6ec9dac62d6a51ff13b3c23a8afd544cd9caa166c4d086b306536d15e1f4a84c23a3eb8dedb89182d2be7f1e36b9a45691           144942 main/binary-amd64/Packages.gz
+ 433518fdc3b22556fb7e02a20b1d9393464d17ff242734bcff9dfbb12d121b24c21693217fae9e480c83e9fb1643eb08f44a140099b0a2e2f8101f3f0cc720d9              163 Release
+ e9c204f2fb5345485a24c59b94503b9cd5f1f2b43d3c46be4f757e8b14d2b2bd3806115500d11e4d6308e980de21188f4a1f2e046f5dc680fce7d7198fee24fb           382150 main/binary-amd64/Packages
+ 323e84714e1e05fcdb366ecb576f103e16eefee26e56380fa6c13005234eab80b2749eb69a277e8d7e5c0b31cf2b142cd9226a9e2ca6684797bd66d6cbe155c6            95947 main/binary-amd64/Packages.gz
